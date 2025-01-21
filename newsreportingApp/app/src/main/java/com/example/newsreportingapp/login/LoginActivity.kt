@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.newsreportingapp.MainActivity
+import com.insightwire.MainActivity
 import com.example.newsreportingapp.R
 
 class LoginActivity : AppCompatActivity() {
