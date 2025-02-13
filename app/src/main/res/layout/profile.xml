@@ -181,7 +181,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save Changes"
-        android:backgroundTint="#A8F0A8"
         android:textColor="#000"
         android:layout_marginTop="16dp"/>
 </LinearLayout>

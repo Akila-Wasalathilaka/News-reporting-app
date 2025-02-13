@@ -51,4 +51,7 @@ dependencies {
     implementation("androidx.exifinterface:exifinterface:1.3.7") // For image handling
     implementation("com.github.bumptech.glide:glide:4.16.0") // Glide for image loading
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0") // Glide annotation processor
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
