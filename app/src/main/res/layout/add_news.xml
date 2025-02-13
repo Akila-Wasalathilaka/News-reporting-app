@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white"
-    tools:context=".AddNews">
+    tools:context=".Fragments.AddNewsFragment">
 
     <!-- Toolbar -->
     <LinearLayout

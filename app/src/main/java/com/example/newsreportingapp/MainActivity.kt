@@ -34,10 +34,9 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> viewPager.currentItem = 0
-                R.id.nav_search -> viewPager.currentItem = 1
-                R.id.nav_add -> viewPager.currentItem = 2
-                R.id.nav_list -> viewPager.currentItem = 3
-                R.id.nav_profile -> viewPager.currentItem = 4
+                R.id.nav_add -> viewPager.currentItem = 1
+                R.id.nav_list -> viewPager.currentItem = 2
+                R.id.nav_profile -> viewPager.currentItem = 3
             }
             true
 
