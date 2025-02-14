@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -7,8 +8,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,30 +17,32 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsReportingApp"
-        android:requestLegacyExternalStorage="true"
         tools:targetApi="33">
-
+        <activity
+            android:name=".login.Signup"
+            android:exported="false" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.NewsReportingApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.NewsReportingApp" />
-
         <activity android:name=".HomeFragment" />
         <activity android:name=".Fragments.AddNewsFragment" android:exported="true" />
-        <activity android:name=".NewsApprovalActivity" />
-        <activity android:name=".Profile" />
+        <activity android:name="Fragments.NewsApprovalFragment" />
+        <activity android:name="Fragments.ProfileFragment" />
     </application>
+
 </manifest>

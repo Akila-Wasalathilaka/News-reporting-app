@@ -15,16 +15,18 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var forgotPasswordTextView: TextView
     private lateinit var signInButton: Button
+    private lateinit var signUpTextView: TextView // Declared but not initialized earlier
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_activity) // Link to the login_activity.xml layout
+        setContentView(R.layout.login_activity) // Ensure this layout matches your XML file
 
         // Initialize views
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         forgotPasswordTextView = findViewById(R.id.forgotPasswordTextView)
         signInButton = findViewById(R.id.signInButton)
+        signUpTextView = findViewById(R.id.signUpTextView) // Initialize here
 
         // Set up the sign-in button click listener
         signInButton.setOnClickListener {
@@ -54,6 +56,13 @@ class LoginActivity : AppCompatActivity() {
             // Navigate to forgot password activity or show dialog
             // For now, we'll just show a message
             // You can implement a new activity or dialog here
+        }
+
+        // Set up the sign-up button click listener
+        signUpTextView.setOnClickListener {
+            val intent = Intent(this, Signup::class.java)
+            startActivity(intent)
+            finish() // Close the login activity
         }
     }
 }

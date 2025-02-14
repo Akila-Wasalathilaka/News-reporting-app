@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"> <!-- White background -->
+    android:background="#FFFFFF">
 
     <!-- Content Container -->
     <RelativeLayout
@@ -70,26 +71,95 @@
             android:textSize="16sp" />
 
         <!-- Divider -->
-        <View
+        <!-- Light gray divider -->
+
+        <!-- Custom Google Login Button -->
+        <!-- Custom Google Login Button -->
+        <LinearLayout
+            android:id="@+id/customGoogleButton"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="50dp"
             android:layout_below="@id/signInButton"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:background="#E0E0E0" /> <!-- Light gray divider -->
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/google_button_style"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <!-- Spacer -->
+            <View
+                android:layout_width="50dp"
+                android:layout_height="match_parent" />
+            <!-- Google Logo -->
+
+            <ImageView
+                android:id="@+id/googleLogo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/google_logo"
+                android:contentDescription="Google Logo" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <!-- Button Text -->
+            <TextView
+                android:id="@+id/googleButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Continue with Google"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <!-- Forgot Password -->
         <TextView
             android:id="@+id/forgotPasswordTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/signInButton"
+            android:layout_below="@id/customGoogleButton"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
             android:text="Forgot password?"
             android:textColor="#405DE6"
             android:textSize="14sp" />
+
+        <!-- Sign Up Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgotPasswordTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <!-- "Don't have an account?" TextView -->
+            <TextView
+                android:id="@+id/dontHaveAccountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account?"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <!-- "Sign Up" TextView -->
+            <TextView
+                android:id="@+id/signUpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textColor="#405DE6"
+                android:textSize="15sp"
+                android:paddingLeft="4dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
 
     </RelativeLayout>
 </RelativeLayout>
