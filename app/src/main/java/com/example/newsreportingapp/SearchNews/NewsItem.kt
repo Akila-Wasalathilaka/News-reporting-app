@@ -1,16 +1,19 @@
 package com.example.newsreportingapp.SearchNews
 
-import java.util.Date
+import java.util.*
 
 data class NewsItem(
-    val imageUrl: String, // URL of the news image
-    val title: String, // Title of the news
-    val description: String = "", // Optional description or summary
-    val author: String = "Unknown", // Author of the news
-    val source: String = "Unknown Source" // Source of the news (e.g., CNN, BBC)
+    val imageUrl: String = "",
+    val title: String = "",
+    val description: String? = null,
+    val author: String? = null,
+    val source: String? = null,
+    val timestamp: Long = System.currentTimeMillis() // Store timestamp for sorting
 ) {
-    // Optional: Override toString() for better logging
+    // Required empty constructor for Firebase
+    constructor() : this("", "", null, null, null, System.currentTimeMillis())
+
     override fun toString(): String {
-        return "NewsItem(title='$title', author='$author', source='$source')"
+        return "NewsItem(title='$title', author='$author', source='$source', timestamp=$timestamp)"
     }
 }

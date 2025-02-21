@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,117 +21,44 @@
             android:id="@+id/profileImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/profile"
+            android:contentDescription="Profile Picture"
             android:layout_marginEnd="16dp"
             android:scaleType="centerCrop"
             android:background="@drawable/circle_background"
             android:padding="2dp"/>
 
-        <!-- Profile Stats -->
+        <!-- User Info -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center">
 
-            <!-- Stories -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/nameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp">
+                android:text="User Name"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="150"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stories"
-                    android:textSize="14sp"
-                    android:textColor="#8F8F8F"/>
-            </LinearLayout>
-
-            <!-- Followers -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/emailText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10K"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Followers"
-                    android:textSize="14sp"
-                    android:textColor="#8F8F8F"/>
-            </LinearLayout>
-
-            <!-- Following -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="500"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Following"
-                    android:textSize="14sp"
-                    android:textColor="#8F8F8F"/>
-            </LinearLayout>
+                android:text="Email Address"
+                android:textSize="14sp"
+                android:textColor="#8F8F8F" />
         </LinearLayout>
     </LinearLayout>
-
-    <!-- Name and ID -->
-    <TextView
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mathew Jorden"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/idText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="News Reporter | ID: 1EX456"
-        android:textSize="14sp"
-        android:textColor="#8F8F8F"
-        android:layout_marginTop="4dp"/>
 
     <!-- Bio -->
     <TextView
         android:id="@+id/bioText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Award-winning journalist covering global news. Passionate about storytelling and uncovering the truth."
+        android:text="User Bio"
         android:textSize="14sp"
         android:layout_marginTop="16dp"/>
 
@@ -146,41 +72,13 @@
         android:textColor="#000"
         android:layout_marginTop="16dp"/>
 
-    <!-- Contact Information -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact Information"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"/>
-
-    <EditText
-        android:id="@+id/emailText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/edittext_background"
-        android:padding="10dp"
-        android:layout_marginTop="8dp"/>
-
-    <EditText
-        android:id="@+id/contactText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contact Number"
-        android:inputType="phone"
-        android:background="@drawable/edittext_background"
-        android:padding="10dp"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Save Button -->
+    <!-- Logout Button -->
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/logoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Changes"
-        android:textColor="#000"
+        android:text="Log Out"
+        android:backgroundTint="#FF4B4B"
+        android:textColor="#FFF"
         android:layout_marginTop="16dp"/>
 </LinearLayout>

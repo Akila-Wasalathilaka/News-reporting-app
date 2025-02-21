@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">news reporting App</string>
-
+    <string name="default_web_client_id">192509468615-5a8meeqhgm829a5l57ufmadpv13mvvtu.apps.googleusercontent.com</string>
 </resources>

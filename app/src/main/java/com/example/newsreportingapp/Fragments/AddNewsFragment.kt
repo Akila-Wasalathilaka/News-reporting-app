@@ -1,172 +1,75 @@
 package com.example.newsreportingapp.Fragments
 
-import android.Manifest
-import android.content.ContentValues
-import android.content.pm.PackageManager
-import android.net.Uri
-import android.os.Build
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.core.app.ActivityCompat
+import com.example.newsreportingapp.Post
 import com.example.newsreportingapp.R
+import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 
 class AddNewsFragment : Fragment(R.layout.add_news) {
-    private lateinit var selectedImageView: ImageView
-    private lateinit var addImageButton: ImageButton
-    private lateinit var deleteButton: ImageButton
-    private lateinit var sendButton: Button
+
+    private lateinit var topicInput: EditText
     private lateinit var captionInput: EditText
-    private lateinit var capturePhotoButton: Button
-
-    private var imageUri: Uri? = null
-
-    private val galleryLauncher =
-        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-            uri?.let {
-                imageUri = uri
-                loadImageToView(uri)
-            }
-        }
-
-    private val cameraLauncher =
-        registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
-            if (success) {
-                imageUri?.let { loadImageToView(it) }
-            }
-        }
+    private lateinit var sendButton: Button
+    private lateinit var deleteButton: Button
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        selectedImageView = view.findViewById(R.id.selectedImageView)
-        addImageButton = view.findViewById(R.id.addImageButton)
-        deleteButton = view.findViewById(R.id.deleteButton)
-        sendButton = view.findViewById(R.id.sendButton)
+        topicInput = view.findViewById(R.id.topicInput)
         captionInput = view.findViewById(R.id.captionInput)
-        capturePhotoButton = view.findViewById(R.id.capturePhotoButton)
+        sendButton = view.findViewById(R.id.sendButton)
+        deleteButton = view.findViewById(R.id.deleteButton)
 
-        addImageButton.setOnClickListener { openGallery() }
-        capturePhotoButton.setOnClickListener { openCamera() }
-        deleteButton.setOnClickListener { clearImageSelection() }
-        sendButton.setOnClickListener { validateAndPost() }
-    }
+        sendButton.setOnClickListener {
+            uploadPost()
+        }
 
-    private fun openGallery() {
-        if (checkStoragePermission()) {
-            galleryLauncher.launch("image/*")
+        deleteButton.setOnClickListener {
+            resetFields()
         }
     }
 
-    private fun openCamera() {
-        if (checkCameraPermission()) {
-            createImageUri()?.let { uri ->
-                imageUri = uri
-                cameraLauncher.launch(uri)
-            }
-        }
-    }
-
-    private fun loadImageToView(uri: Uri) {
-        selectedImageView.setImageURI(uri)
-        selectedImageView.visibility = View.VISIBLE
-        addImageButton.visibility = View.GONE
-        deleteButton.visibility = View.VISIBLE
-    }
-
-    private fun clearImageSelection() {
-        imageUri = null
-        selectedImageView.setImageURI(null)
-        selectedImageView.visibility = View.GONE
-        addImageButton.visibility = View.VISIBLE
-        deleteButton.visibility = View.GONE
-    }
-
-    private fun validateAndPost() {
+    private fun uploadPost() {
+        val topic = topicInput.text.toString().trim()
         val caption = captionInput.text.toString().trim()
-        when {
-            imageUri == null -> showToast("Please select an image")
-            caption.isEmpty() -> showToast("Please write a caption")
-            else -> {
-                showToast("News posted successfully!")
-                clearImageSelection()
-                captionInput.text.clear()
-            }
-        }
-    }
 
-    private fun checkCameraPermission(): Boolean {
-        return if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.CAMERA
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            true
-        } else {
-            requestPermissions(arrayOf(Manifest.permission.CAMERA), 100)
-            false
-        }
-    }
-
-    private fun checkStoragePermission(): Boolean {
-        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            Manifest.permission.READ_MEDIA_IMAGES
-        } else {
-            Manifest.permission.READ_EXTERNAL_STORAGE
+        // Check if the required fields are not empty
+        if (topic.isEmpty() || caption.isEmpty()) {
+            Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+            return
         }
 
-        return if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                permission
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-            true
-        } else {
-            requestPermissions(arrayOf(permission), 101)
-            false
-        }
-    }
+        // Show a Toast to confirm that the upload process is starting
+        Toast.makeText(requireContext(), "Uploading Post...", Toast.LENGTH_SHORT).show()
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            100 -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openCamera()
+        try {
+            // Create a new post object
+            val postId = UUID.randomUUID().toString()
+            val database = FirebaseDatabase.getInstance().reference
+            val post = Post(postId, topic, caption, "")
+
+            // Store data in Firebase Realtime Database
+            database.child("posts").child(postId).setValue(post).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(requireContext(), "Post uploaded successfully", Toast.LENGTH_LONG).show()
                 } else {
-                    showToast("Camera permission required")
+                    Toast.makeText(requireContext(), "Failed to upload post: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
-            101 -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openGallery()
-                } else {
-                    showToast("Storage permission required")
-                }
-            }
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Error during upload: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun createImageUri(): Uri? {
-        val contentValues = ContentValues().apply {
-            put(MediaStore.Images.Media.DISPLAY_NAME, "News_${System.currentTimeMillis()}")
-            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
-        }
-        return requireActivity().contentResolver.insert(
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-            contentValues
-        )
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    private fun resetFields() {
+        topicInput.text.clear()
+        captionInput.text.clear()
     }
 }

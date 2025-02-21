@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -9,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.newsreportingapp"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -41,6 +42,12 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -56,4 +63,17 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.cardview:cardview:1.0.0")
     implementation ("com.google.android.material:material:1.9.0")
+
+    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
+    implementation("com.google.firebase:firebase-analytics")
+
+    implementation ("com.google.android.gms:play-services-auth:19.2.0")
+    implementation ("com.squareup.picasso:picasso:2.8")
+    implementation ("com.google.firebase:firebase-auth:21.0.5")
+    implementation ("com.google.firebase:firebase-firestore:24.2.0")
+    implementation ("com.google.firebase:firebase-storage:20.0.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+
 }
+

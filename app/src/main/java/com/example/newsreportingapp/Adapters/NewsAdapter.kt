@@ -7,53 +7,31 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.newsreportingapp.SearchNews.NewsItem
-import android.util.Log
 
-class NewsAdapter(private val newsList: List<NewsItem>) :
-    RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(private val newsList: MutableList<NewsItem>) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    // ViewHolder class
-    inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val newsImage: ImageView = itemView.findViewById(R.id.newsImage)
-        val newsTitle: TextView = itemView.findViewById(R.id.newsTitle)
-        val newsDescription: TextView = itemView.findViewById(R.id.newsDescription)
-        val newsSource: TextView = itemView.findViewById(R.id.newsReporter)
+    class NewsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val newsImage: ImageView = view.findViewById(R.id.newsImage)
+        val newsCaption: TextView = view.findViewById(R.id.newsDescription)
     }
 
-    // Create ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_news_list, parent, false) // Updated to item_news_list
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news_list, parent, false)
         return NewsViewHolder(view)
     }
 
-    // Bind data to ViewHolder
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val newsItem = newsList[position]
-        Log.d("NewsAdapter", "Binding item: ${newsItem.title}") // Log the title of the item being bound
-
-        // Load image using Glide
-        Glide.with(holder.itemView.context)
-            .load(newsItem.imageUrl)
-            .transition(DrawableTransitionOptions.withCrossFade())
-            .placeholder(R.drawable.ic_image)
-            .error(R.drawable.error)
-            .into(holder.newsImage)
-
-        // Set news title
-        holder.newsTitle.text = newsItem.title
-
-        // Set news description
-        holder.newsDescription.text = newsItem.description
-
-        // Set news source
-        holder.newsSource.text = "Source: ${newsItem.source}"
+        Glide.with(holder.itemView.context).load(newsItem.imageUrl).into(holder.newsImage)
+        holder.newsCaption.text = newsItem.description ?: "No description available" // Handles null case
     }
 
-    // Return the number of items in the list
-    override fun getItemCount(): Int {
-        return newsList.size
+    override fun getItemCount() = newsList.size
+
+    // Method to add news dynamically
+    fun addNews(newsItem: NewsItem) {
+        newsList.add(0, newsItem) // Add new news at the top
+        notifyItemInserted(0)
     }
 }

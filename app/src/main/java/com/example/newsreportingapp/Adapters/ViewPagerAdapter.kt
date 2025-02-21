@@ -1,9 +1,9 @@
-package com.example.newsreportingapp.Adapters
+package com.example.newsreportingapp.Fragments
+
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.newsreportingapp.Fragments.AddNewsFragment
 import com.example.newsreportingapp.Fragments.ProfileFragment
 import com.example.newsreportingapp.HomeFragment
 import com.example.newsreportingapp.Fragments.NewsApprovalFragment

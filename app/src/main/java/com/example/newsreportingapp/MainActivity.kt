@@ -1,9 +1,9 @@
-package com.example.newsreportingapp
+package com.example.newsreportingapp.Fragments
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.example.newsreportingapp.Adapters.ViewPagerAdapter
+import com.example.newsreportingapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
