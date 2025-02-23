@@ -59,13 +59,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62ba5f2d-89ff-4fc7-8dbe-5aff5394657e" name="Changes" comment="Update UI">
-      <change beforePath="$PROJECT_DIR$/.idea/News-reporting-app.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
@@ -73,16 +68,13 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Adapters/ViewPagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Adapters/ViewPagerAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/AddNewsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/AddNewsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/ProfileFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/SearchNews/NewsItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/SearchNews/NewsItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/login/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/login/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/add_news.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/add_news.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/approval.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/approval.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/home_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/home_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_news_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_news_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +84,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=Default, isTemplate=false, identifier=serial=HZQL1838KAL30800350;connection=cb22ef5e)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=Default, isTemplate=false, identifier=serial=HZQL1838KAL30800350;connection=33b0be74)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -140,11 +132,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -164,6 +156,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/src/main/java/com/example/newsreportingapp/Fragments/AddNewsFragment.kt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/src/main/res/layout/login_activity.xml" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
@@ -188,12 +182,13 @@
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;E:/AndroidStudioProjects/News-reporting-app/app/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/AndroidStudioProjects/News-reporting-app/app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/news-app/NewsApp-main&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   },
@@ -208,6 +203,7 @@
       <recent name="E:\AndroidStudioProjects\News-reporting-app\app" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.newsreportingapp.Api" />
       <recent name="com.example.newsreportingapp" />
       <recent name="com.example.newsreportingapp.Fragments" />
       <recent name="com.example.newsreportingapp.Adapters" />
@@ -302,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739524813047</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update UI">
+      <option name="closed" value="true" />
+      <created>1740114695170</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740114695170</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

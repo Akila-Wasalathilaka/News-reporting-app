@@ -4,6 +4,7 @@
     <color name="bottom_nav_icon_color">#FF000000</color>
     <color name="bottom_nav_icon_color_selected">#405DE6</color>
     <color name="nav_bar_color">#FFFFFF</color>
+    <color name="sky_blue">#00BBFF</color>
 
     <!-- Add a color state list for bottom navigation -->
 

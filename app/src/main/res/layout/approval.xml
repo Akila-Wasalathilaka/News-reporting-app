@@ -72,11 +72,22 @@
                             android:textColor="#333333"
                             android:layout_marginBottom="4dp"/>
 
+                        <!-- News Content -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="This is the content of the news article..."
+                            android:textSize="14sp"
+                            android:textColor="#555555"
+                            android:layout_marginBottom="8dp"
+                            android:maxLines="3"
+                            android:ellipsize="end"/>
+
                         <!-- Reporter Name -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Submitted by: Reporter Name"
+                            android:text="Submitted by: User123"
                             android:textSize="14sp"
                             android:textColor="#8F8F8F"
                             android:layout_marginBottom="4dp"/>
@@ -89,7 +100,34 @@
                             android:text="Status: Approved"
                             android:textSize="14sp"
                             android:textColor="#4CAF50"
+                            android:layout_marginBottom="4dp"/>
+
+                        <!-- Feedback -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Feedback: Good job!"
+                            android:textSize="14sp"
+                            android:textColor="#8F8F8F"
+                            android:layout_marginBottom="4dp"/>
+
+                        <!-- Rating -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rating: 4.5"
+                            android:textSize="14sp"
+                            android:textColor="#FFD700"
                             android:layout_marginBottom="8dp"/>
+
+                        <!-- Created At -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Created At: 2025-02-23 14:30"
+                            android:textSize="12sp"
+                            android:textColor="#8F8F8F"/>
+
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

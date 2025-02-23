@@ -1,5 +1,6 @@
 package com.example.newsreportingapp.Fragments
 
+import ViewPagerAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -39,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_profile -> viewPager.currentItem = 3
             }
             true
-
         }
     }
 }

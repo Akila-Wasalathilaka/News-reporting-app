@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    tools:context=".Fragments.HomeFragment">
+    tools:context="Fragments.HomeFragment">
 
     <!-- Search Bar -->
     <LinearLayout
@@ -38,12 +38,20 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- RecyclerView for List Layout -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/postGrid"
+    <!-- SwipeRefreshLayout wrapping RecyclerView -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="1dp"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_news_list" /> <!-- Updated to item_news_list -->
+        android:layout_height="match_parent">
+
+        <!-- RecyclerView for List Layout -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/postGrid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="1dp"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_news_list" /> <!-- Updated to item_news_list -->
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </LinearLayout>

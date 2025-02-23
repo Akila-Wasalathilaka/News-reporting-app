@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+    id("kotlin-kapt") // Correct way to enable kapt
 }
 
 android {
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.newsreportingapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -34,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true // Enables View Binding
+    }
 }
 
 dependencies {
@@ -42,38 +47,48 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.storage.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.firebase.database.ktx)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.auth)
+
+    // Firebase (Using BOM for version management)
+    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-database")
+
+    // Image loading
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.androidx.swiperefreshlayout)
+    kapt("com.github.bumptech.glide:compiler:4.16.0")
+
+    // Networking
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+    // Coroutine support
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
+    // UI Components
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.android.material:material:1.9.0")
+
+    // Google Play Services
+    implementation("com.google.android.gms:play-services-auth:19.2.0")
+
+    // Picasso (Alternative to Glide, remove if not needed)
+    implementation("com.squareup.picasso:picasso:2.8")
+
+    // Realm Database
+    implementation("io.realm:realm-android-library:10.10.1")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation ("com.google.firebase:firebase-auth-ktx")
+    }
 
-    // Add these dependencies
-    implementation("androidx.activity:activity-ktx:1.10.0") // For ActivityResultLauncher
-    implementation("androidx.fragment:fragment-ktx:1.7.0") // For FragmentResultLauncher
-    implementation("androidx.exifinterface:exifinterface:1.3.7") // For image handling
-    implementation("com.github.bumptech.glide:glide:4.16.0") // Glide for image loading
-    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0") // Glide annotation processor
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation ("androidx.cardview:cardview:1.0.0")
-    implementation ("com.google.android.material:material:1.9.0")
-
-    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
-    implementation("com.google.firebase:firebase-analytics")
-
-    implementation ("com.google.android.gms:play-services-auth:19.2.0")
-    implementation ("com.squareup.picasso:picasso:2.8")
-    implementation ("com.google.firebase:firebase-auth:21.0.5")
-    implementation ("com.google.firebase:firebase-firestore:24.2.0")
-    implementation ("com.google.firebase:firebase-storage:20.0.0")
-    implementation("com.squareup.okhttp3:okhttp:4.9.1")
-
-
-}
 

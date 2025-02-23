@@ -1,12 +1,12 @@
-package com.example.newsreportingapp.Fragments
-
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.newsreportingapp.Fragments.ProfileFragment
-import com.example.newsreportingapp.HomeFragment
+import com.example.newsreportingapp.AddNewsFragment
 import com.example.newsreportingapp.Fragments.NewsApprovalFragment
+import com.example.newsreportingapp.Fragments.ProfileFragment
+
+
 
 
 class ViewPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {

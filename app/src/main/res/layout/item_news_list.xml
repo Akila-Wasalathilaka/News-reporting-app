@@ -17,16 +17,26 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ic_image" /> <!-- Default placeholder -->
 
-    <!-- News Title -->
-    <TextView
-        android:id="@+id/newsTitle"
+    <!-- Title and Timestamp in the same row -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="News Title"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- News Title -->
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="News Title"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <!-- News Description -->
     <TextView
@@ -38,14 +48,31 @@
         android:textColor="#666666"
         android:textSize="14sp" />
 
-    <!-- News Source -->
-    <TextView
-        android:id="@+id/newsReporter"
+    <!-- News Reporter and Timestamp in the same row -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Reoprter: Unknown"
-        android:textColor="#999999"
-        android:textSize="12sp" />
+        android:orientation="horizontal">
+
+        <!-- News Reporter -->
+        <TextView
+            android:id="@+id/newsReporter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reporter: Unknown"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+        <!-- Timestamp at Bottom-Right -->
+        <TextView
+            android:id="@+id/newsTimestampBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 mins ago"
+            android:textColor="#999999"
+            android:textSize="12sp"/>
+    </LinearLayout>
 
 </LinearLayout>
