@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "192509468615",
+    "project_id": "news-reporting-app-4d009",
+    "storage_bucket": "news-reporting-app-4d009.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192509468615:android:e5888c3b0fd6d8760343e2",
+        "android_client_info": {
+          "package_name": "com.example.newsreportingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVWrOGfTR7g4YDTw4jDu1k-aiZ0n6pZYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
